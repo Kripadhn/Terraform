@@ -1,0 +1,7 @@
+data "aws_subnet_ids" "example" {
+  vpc_id = "vpc-abc123"
+}
+
+output "subnet_ids" {
+  value = data.aws_subnet_ids.example.ids
+}

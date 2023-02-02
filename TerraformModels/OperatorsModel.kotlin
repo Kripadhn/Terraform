@@ -1,0 +1,12 @@
+provider "tfe" {
+  organization = "my-organization"
+}
+
+resource "tfe_organization_policy_set" "example" {
+  name        = "my-policy-set"
+  description = "My policy set for Terraform Enterprise."
+
+  policy {
+    policy_content = "${file("policy.hcl")}"
+  }
+}
